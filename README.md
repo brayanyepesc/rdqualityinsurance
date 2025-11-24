@@ -29,6 +29,43 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Deploy on AWS ECS with ECR
+
+This project includes comprehensive support for deploying to AWS ECS (Elastic Container Service) using ECR (Elastic Container Registry).
+
+### Quick Start
+
+1. **Read the complete guide**: Check out [AWS_DEPLOYMENT_GUIDE.md](./AWS_DEPLOYMENT_GUIDE.md) for a detailed step-by-step guide in Spanish.
+
+2. **Build and test locally**:
+   ```bash
+   docker build -t rdqualityinsurance .
+   docker run -p 3000:3000 rdqualityinsurance
+   ```
+
+3. **Deploy to ECR** (automated script):
+   ```bash
+   ./scripts/deploy-to-ecr.sh [region] [account-id]
+   ```
+
+### What's Included
+
+- ✅ **Dockerfile**: Multi-stage build optimized for Next.js production
+- ✅ **docker-compose.yml**: For local testing
+- ✅ **ECS Task Definition**: Template for ECS configuration
+- ✅ **GitHub Actions**: Automated CI/CD workflow
+- ✅ **Deployment Scripts**: Helper scripts for manual deployment
+- ✅ **Complete Guide**: Step-by-step instructions in Spanish
+
+### Files
+
+- `Dockerfile` - Production-ready Docker configuration
+- `docker-compose.yml` - Local development with Docker
+- `ecs-task-definition.json` - ECS task definition template
+- `.github/workflows/deploy-to-ecs.yml` - Automated deployment workflow
+- `scripts/deploy-to-ecr.sh` - Manual deployment script
+- `AWS_DEPLOYMENT_GUIDE.md` - Complete deployment guide (Spanish)
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
