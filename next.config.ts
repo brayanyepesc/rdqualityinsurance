@@ -4,7 +4,8 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const nextConfig: NextConfig = {
     images: {
         unoptimized: true,
-    }
+    },
+    output: 'standalone',
 };
  
 const withNextIntl = createNextIntlPlugin();
