@@ -8,10 +8,10 @@ WORKDIR /app
 # Copiar archivos de dependencias
 COPY package.json bun.lock* package-lock.json* pnpm-lock.yaml* yarn.lock* ./
 RUN \
-  if [ -f bun.lock ]; then yarn global add bun && bun install --frozen-lockfile; \
+  if [ -f bun.lock ]; then npm install -g bun && bun install --frozen-lockfile; \
   elif [ -f yarn.lock ]; then yarn --frozen-lockfile; \
   elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i --frozen-lockfile; \
+  elif [ -f pnpm-lock.yaml ]; then npm install -g pnpm && pnpm i --frozen-lockfile; \
   else echo "Lockfile not found." && exit 1; \
   fi
 
@@ -26,10 +26,10 @@ COPY . .
 # ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN \
-  if [ -f bun.lock ]; then yarn global add bun && bun run build; \
+  if [ -f bun.lock ]; then npm install -g bun && bun run build; \
   elif [ -f yarn.lock ]; then yarn run build; \
   elif [ -f package-lock.json ]; then npm run build; \
-  elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm run build; \
+  elif [ -f pnpm-lock.yaml ]; then npm install -g pnpm && pnpm run build; \
   else echo "Lockfile not found." && exit 1; \
   fi
 

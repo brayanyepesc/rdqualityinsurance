@@ -67,14 +67,15 @@ echo -e "${GREEN}✓ Autenticación exitosa${NC}\n"
 
 # Paso 4: Etiquetar la imagen
 echo -e "${YELLOW}[4/5] Etiquetando imagen...${NC}"
+TIMESTAMP=$(date +%Y%m%d-%H%M%S)
 docker tag ${REPOSITORY}:latest ${IMAGE_NAME}:latest
-docker tag ${REPOSITORY}:latest ${IMAGE_NAME}:$(date +%Y%m%d-%H%M%S)
+docker tag ${REPOSITORY}:latest ${IMAGE_NAME}:${TIMESTAMP}
 echo -e "${GREEN}✓ Imagen etiquetada${NC}\n"
 
 # Paso 5: Subir la imagen a ECR
 echo -e "${YELLOW}[5/5] Subiendo imagen a ECR...${NC}"
 docker push ${IMAGE_NAME}:latest
-docker push ${IMAGE_NAME}:$(date +%Y%m%d-%H%M%S)
+docker push ${IMAGE_NAME}:${TIMESTAMP}
 echo -e "${GREEN}✓ Imagen subida exitosamente${NC}\n"
 
 echo -e "${GREEN}=== ✓ Despliegue completado exitosamente ===${NC}\n"
