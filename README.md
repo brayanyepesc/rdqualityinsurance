@@ -33,11 +33,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 This project includes comprehensive support for deploying to AWS ECS (Elastic Container Service) using ECR (Elastic Container Registry).
 
-### Quick Start
+### 🚀 Quick Start
 
-1. **Read the complete guide**: Check out [AWS_DEPLOYMENT_GUIDE.md](./AWS_DEPLOYMENT_GUIDE.md) for a detailed step-by-step guide in Spanish.
+**¿Primera vez desplegando a AWS ECS?** Comienza aquí:
+- 📖 [Guía Rápida de Inicio (5 pasos)](./QUICK_START.md) - ¡Comienza en minutos!
+- ✅ [Lista de Verificación](./DEPLOYMENT_CHECKLIST.md) - Rastrea tu progreso
+- 📚 [Guía Completa Detallada](./AWS_DEPLOYMENT_GUIDE.md) - Guía paso a paso con solución de problemas
 
-2. **Build and test locally**:
+### Local Testing
+
+1. **Build and test locally**:
    ```bash
    docker build -t rdqualityinsurance .
    docker run -p 3000:3000 rdqualityinsurance
@@ -48,23 +53,29 @@ This project includes comprehensive support for deploying to AWS ECS (Elastic Co
    ./scripts/deploy-to-ecr.sh [region] [account-id]
    ```
 
-### What's Included
+### 📁 What's Included
 
-- ✅ **Dockerfile**: Multi-stage build optimized for Next.js production
-- ✅ **docker-compose.yml**: For local testing
-- ✅ **ECS Task Definition**: Template for ECS configuration
-- ✅ **GitHub Actions**: Automated CI/CD workflow
-- ✅ **Deployment Scripts**: Helper scripts for manual deployment
-- ✅ **Complete Guide**: Step-by-step instructions in Spanish
+- ✅ **Dockerfile** - Multi-stage build optimized for Next.js production
+- ✅ **Dockerfile.debian** - Alternative Dockerfile for better compatibility
+- ✅ **docker-compose.yml** - For local testing
+- ✅ **ECS Task Definition** - Template for ECS configuration
+- ✅ **GitHub Actions** - Automated CI/CD workflow
+- ✅ **Deployment Scripts** - Helper scripts for manual deployment
+- ✅ **Complete Guides** - Step-by-step instructions in Spanish
 
-### Files
+### 📚 Documentation Files
 
-- `Dockerfile` - Production-ready Docker configuration
-- `docker-compose.yml` - Local development with Docker
-- `ecs-task-definition.json` - ECS task definition template
-- `.github/workflows/deploy-to-ecs.yml` - Automated deployment workflow
-- `scripts/deploy-to-ecr.sh` - Manual deployment script
-- `AWS_DEPLOYMENT_GUIDE.md` - Complete deployment guide (Spanish)
+| File | Description |
+|------|-------------|
+| [QUICK_START.md](./QUICK_START.md) | Quick 5-step deployment guide |
+| [AWS_DEPLOYMENT_GUIDE.md](./AWS_DEPLOYMENT_GUIDE.md) | Complete detailed guide with troubleshooting |
+| [DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md) | Track your deployment progress |
+| `Dockerfile` | Production Docker configuration |
+| `docker-compose.yml` | Local development with Docker |
+| `ecs-task-definition.json` | ECS task definition template |
+| `.github/workflows/deploy-to-ecs.yml` | Automated deployment workflow |
+| `scripts/deploy-to-ecr.sh` | Manual deployment script |
+| `.env.example` | Environment variables example |
 
 ## Deploy on Vercel
 
